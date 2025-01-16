@@ -12,7 +12,9 @@ from threading import Lock
 import requests
 from dataextractor import generate
 from database.vectorsearch import search_products
+from dotenv import load_dotenv
 
+load_dotenv()
 
 current_date = datetime.now()
 product_list=[]
@@ -58,7 +60,7 @@ Human input: {input}."""
 
 # Initialize LLM
 llm = ChatGroq(
-    groq_api_key="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",
+    groq_api_key=os.getenv("GROQ_API_KEY"),
     model_name="llama-3.3-70b-versatile"
 )
 

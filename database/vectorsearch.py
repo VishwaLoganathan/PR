@@ -6,7 +6,7 @@ import json
 from dotenv import load_dotenv
 load_dotenv()
  
-pinecone_api_key = "pcsk_6GVZRW_6rDg8xQgc1E2EXhD6ABR7A9YwrenNHCf2HKfu7Njgoh85n4Ao1evR62n5DFALd7"
+pinecone_api_key = os.getenv("PINECONE_API_KEY")
 pinecone_host = "https://material-master-x2jalxr.svc.aped-4627-b74a.pinecone.io"
  
  

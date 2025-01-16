@@ -1,9 +1,9 @@
 import requests
 import os
 
-Jina_api = "jina_d1f20ceaa138457c8f8fe46db436665b3xRYUXn_hqA5lUuHnlDF9xH5kpGZ"
+
  
-embedding_api=Jina_api  
+embedding_api=os.getenv("JINA_API_KEY")
  
    
 def embeddingprocess(text):

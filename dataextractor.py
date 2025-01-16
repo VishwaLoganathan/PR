@@ -2,9 +2,9 @@ import os
 from crewai import Agent, Task, Crew, LLM
 from pydantic import BaseModel
 
-# Set environment variables
-os.environ["Groq_llama_Model"] = "groq/llama-3.3-70b-versatile"
-os.environ["Groqapikey"] = "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"  # Replace with your API key
+# # Set environment variables
+# os.environ["Groq_llama_Model"] = "groq/llama-3.3-70b-versatile"
+# os.environ["Groqapikey"] = "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"  # Replace with your API key
 
 
 class Blog(BaseModel):
@@ -26,8 +26,8 @@ def generate(user_input):
                 extraction at your local pub.
             """,
             llm=LLM(
-                model=os.getenv("Groq_llama_Model"),
-                api_key=os.getenv("Groqapikey"),
+                model="groq/llama-3.3-70b-versatile",
+                api_key=os.getenv("GROQ_API_KEY"),
                 temperature=0.7
             )
         )

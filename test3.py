@@ -3,6 +3,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate, ChatPromptTemplate, PromptTemplate
 from datetime import datetime
+from flask_cors import CORS
 import os
 from flask import Flask, request, jsonify
 import re
@@ -118,6 +119,7 @@ def check_product_exist(user_input):
   
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/chat', methods=['POST'])
 def chat():

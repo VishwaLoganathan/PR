@@ -129,6 +129,55 @@ CORS(app, resources={
     }
 })
 
+@app.route('/')
+def home():
+    html = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>PR API Status</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f0f2f5;
+            }
+            .container {
+                text-align: center;
+                padding: 2rem;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .status {
+                color: #4CAF50;
+                font-size: 1.2rem;
+                margin: 1rem 0;
+            }
+            .version {
+                color: #666;
+                font-size: 0.9rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>PR API</h1>
+            <div class="status">✅ System is running</div>
+            <div class="version">Version 1.0</div>
+        </div>
+    </body>
+    </html>
+    """
+    return html
+
+
+
+
 @app.route('/chat', methods=['POST'])
 def chat():
     try:

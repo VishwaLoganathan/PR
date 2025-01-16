@@ -119,7 +119,13 @@ def check_product_exist(user_input):
   
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={
+    r"/chat": {
+        "origins": ["http://localhost:3000"],  # Adjust origins as needed
+        "methods": ["POST"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 @app.route('/chat', methods=['POST'])
 def chat():

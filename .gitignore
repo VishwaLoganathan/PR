@@ -1,0 +1,4 @@
+myenv/
+__pycache__/
+database\__pycache__
+embedding\__pycache__
